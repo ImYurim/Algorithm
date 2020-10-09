@@ -52,13 +52,13 @@ int eat = 0;
 priority_queue<fish> q;
 
 void bfs() {
-	while (!q.empty) {
+	while (!q.empty()) {
 		int d = q.top().d;
 		int x = q.top().x;
 		int y = q.top().y;
 		q.pop();
 		
-		if (map[x][y]>0 && map[x][y] < body) {
+		if (map[x][y] > 0 && map[x][y] < body) {
 			eat++;
 			map[x][y] = 0;
 			if (body == eat) {
@@ -95,13 +95,11 @@ void bfs() {
 		}
 
 	}
-
-	return;
 }
 
 int main() {
 	scanf("%d", &n);
-	printf("%d\n", n);
+
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			scanf("%d", &map[i][j]);
@@ -112,6 +110,7 @@ int main() {
 		}
 	}
 	bfs();
+	printf("%d", m);
 	return 0;
 
 }
