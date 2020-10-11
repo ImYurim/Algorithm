@@ -22,21 +22,75 @@ int order[1000] = { 0 };
 int dx[5] = { 0,0,0,-1,1 };
 int dy[5] = { 0,1,-1,0,0 };
 //
-vector<int> dice = {0,0,0,0,0,0};
+int dice[6] = { 0 };
 //swap위한 tempt dice
-vector<int> t_dice = { 0,0,0,0,0,0 };
+int t_dice[6] = { 0 };
+
+int tx = 0;
+int ty = 0;
+
 
 
 void move() {
-	for (int l = 0; l < k; k++) {
-		int nx = x + dx[l];
-		int ny = y + dy[l];
-		if (nx<0 || nx>n || ny<0 || ny>m)continue;
+
+	for (int l = 0; l < k; l++) {
+		tx = x + dx[order[l]];
+		ty = y + dy[order[l]];
+
+		if (tx < 0 || tx >= n || ty < 0 || ty >= m) {
+
+			continue;
+		}
+		for (int i = 0; i < 6; i++) {
+			t_dice[i] = dice[i];
+		}
 
 		switch (order[l]) {
 		case 1:
-			
+
+			dice[5]= t_dice[1];
+			dice[4] = t_dice[3];
+			dice[1] = t_dice[4];
+			dice[3] = t_dice[5];
+			break;
+
+		case 2:
+
+			dice[1] = t_dice[5];
+			dice[3] = t_dice[4];
+			dice[4] = t_dice[1];
+			dice[5] = t_dice[3];
+			break;
+
+		case 3:
+
+			dice[0] = t_dice[1];
+			dice[1] = t_dice[2];
+			dice[2] = t_dice[3];
+			dice[3] = t_dice[0];
+			break;
+
+		case 4:
+
+			dice[0] = t_dice[3];
+			dice[1] = t_dice[0];
+			dice[2] = t_dice[1];
+			dice[3] = t_dice[2];
+			break;
 		}
+		x += dx[order[l]];
+		y += dy[order[l]];
+		if (map[x][y] == 0) {
+			map[x][y] = dice[3];
+		}
+		else {
+			dice[3] = map[x][y];
+			map[x][y] = 0;
+		}
+
+
+
+		printf("%d\n", dice[1]);
 
 	}
 }
@@ -48,18 +102,17 @@ int main() {
 			scanf("%d", &map[i][j]);
 		}
 	}
-	for (int l = 0; l < k; k++) {
-		scanf("%d", &order[k]);
+
+
+	for (int l = 0; l < k; l++) {
+		scanf("%d", &order[l]);
 	}
 
+
+
 	move();
+
 	return 0;
-
-
-
-
-
-
 
 }
 
