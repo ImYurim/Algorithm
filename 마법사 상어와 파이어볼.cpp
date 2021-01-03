@@ -42,6 +42,7 @@ int main()
     for (int i = 0; i < M; i++)
     {
         scanf("%d %d %d %d %d", &x, &y, &m, &s, &d);
+        //구조체 원소들 중괄호 이용해서 push_back
         fireball.push_back({x, y, m, s, d});
         MAP[x][y].push_back({x, y, m, s, d});
     }
@@ -50,6 +51,7 @@ int main()
     {
         for(int m=1;m<=N;m++){
             for(int n=1;n<=N;n++){
+                //칸마다 vector 들어있는거 삭제하기
                 MAP[m][n].clear();
             }
         }
@@ -78,6 +80,8 @@ int main()
             
             fireball[l].x = nx;
             fireball[l].y = ny;
+            
+            //struct vector 타입이 들어가는 배열 MAP에 struct vector 넣기
             MAP[nx][ny].push_back(fireball[l]);
 
 
@@ -95,12 +99,15 @@ int main()
 
                 if(MAP[j][k].size()==0)continue;
                 if(MAP[j][k].size()==1){
+                    //MAP[j][k][0] : map배열에서 (j,k)에 위치하는 vector의 가장 첫번째 구조체
                     temp.push_back(MAP[j][k][0]);
                     continue;
                 }
                 
                 int f_m=0;
                 int f_s=0;
+                
+                //'모두 짝수이거나 모두 홀수일때 ~를 해라'라는 조건에서는 true로 초기화
                 bool even=true;
                 bool odd=true;
 
