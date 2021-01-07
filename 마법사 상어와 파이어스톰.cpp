@@ -5,6 +5,9 @@
 //남아있는 얼음의 합
 //남아있는 얼음 중 가장 큰 덩어리가 차지하는 칸의 개수 -> DFS
 
+
+//DFS 수정 필요
+
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -15,12 +18,14 @@ int A[35][35];
 int L[1000];
 int sum=0;
 int visited[35][35]={0};
-int max_ice=0;
+int total_ice=0;
 int ans_ice=0;
 
 //위 아래 왼 오
 int dx[4]={-1,1,0,0};
 int dy[4]={0,0,-1,1};
+
+void dfs(int,int);
 
 int main(){
     scanf("%d %d",&N,&Q);
@@ -118,14 +123,30 @@ int main(){
 
     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
-            max_ice=0;
-            //방문한 적이 없다면
-            if(!visited[i][j]){
-                
+            total_ice=0;
+            if(A[i][j]==0)continue;
+            dfs(i,j);
+            
+            if(total_ice>ans_ice){
+                ans_ice=total_ice;
             }
+            
         }
     }
 
     
 }
 
+void dfs(int x, int y){
+    if(A[x][y]==0){
+        return;
+    }
+    visited[x][y]=1;
+    total_ice++;
+    for(int i=0; i<4; i++){
+        if(A[x+dx[i]][y+dy[i]]){
+             dfs(x+dx[i],y+dy[i]);
+             }
+    }
+    visited[x][y]=0;
+}
