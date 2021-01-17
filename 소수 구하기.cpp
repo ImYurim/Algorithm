@@ -20,8 +20,10 @@ int main(){
     
     ans[1]=false;
     for(long long i=2; i<=N; i++){
+        //2부터 하나씩 기준 숫자가 됨. 예1-1) i가 5일 때
         if(ans[i]){
             for(long long j=2*i; j<=N; j+=i){
+                //예1-2) 5의 배수는 소수가 아니므로 제거
                 ans[j]=false;
             }
         }
