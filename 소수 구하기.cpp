@@ -13,6 +13,8 @@ bool ans[1000000];
 
 int main(){
     // 소수 이외의 숫자를 거르는 알고리즘 사용
+    
+    //배열 초기화
     memset(ans,true,sizeof(ans));
     scanf("%lld %lld",&M, &N);
     
