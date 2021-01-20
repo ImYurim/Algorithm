@@ -1,6 +1,3 @@
-//백준 1748번
-//백준제출오류
-
 #include <iostream>
 #include <cmath>
 using namespace std;
