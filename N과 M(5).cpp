@@ -1,6 +1,6 @@
 //백준 15654번
 //불연속적인 수들의 수열
-//제출 시 틀렸습니다.
+
 
 #include <iostream>
 #include <cstring>
@@ -14,7 +14,7 @@ int turn;
 vector<int> input;
 vector<int> arr;
 
-bool visited[9];
+bool visited[10001];
 
 void dfs(int cnt){
     if(cnt==M){
