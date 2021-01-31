@@ -19,7 +19,7 @@ void dfs(int cnt){
         return;
     }
     for(int i=1; i<=N; i++){
-        //if(!visited[i])
+        //if(visited[i])
         visited[i]=true;
         arr.push_back(i);
         dfs(cnt+1);
