@@ -1,5 +1,5 @@
 //백준 18290번
-
+//백준에서 
 #include <iostream>
 #include <algorithm>
 #include <cstring>
@@ -79,10 +79,75 @@ int main(){
 
 
 
+//맞았습니다 나오는 코드랑 똑같이 해봄 
+//틀렸습니다 
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+using namespace std;
+
+int N,M,K;
+int map[11][11];
+int dir[4][2]={{-1,0},{0,-1},{0,1},{1,0}};
+int ans;
+
+
+void dfs(int cnt, int index, int value, bool visited[11][11]){
+    if(cnt==K){
+        ans=max(value,ans);
+        return;
+    }
+    //중복 없이 사전순
+    for(int i=index; i<N*M; i++){
+        int ii=i/M;
+        int jj=i%M;
+
+        
+        bool pass=false;
+        for(int k=0; k<4; k++){
+            int nx = ii+dir[k][0];
+            int ny = jj+dir[k][1];
+            
+            if(nx<0||nx>=N||ny<0||ny>=M)continue;
+            
+            if(visited[nx][ny])pass=true;
+            
+        }
+        
+        if(pass)continue;
+        
+        if(visited[ii][jj])continue;
+        visited[ii][jj]=true;
+        
+        dfs(cnt+1, index+1, value+map[ii][jj],visited);
+        
+        visited[ii][jj]=false;
+    }
+    
+}
+
+int main(){
+    bool visited[11][11];
+    
+    memset(visited, false, sizeof(visited));
+    
+    scanf("%d %d %d",&N,&M,&K);
+    
+    for(int i=0; i<N; i++){
+        for(int j=0; j<M; j++){
+            scanf("%d",&map[i][j]);
+        }
+    }
+
+    dfs(0,0,0,visited);
+    
+    printf("%d",ans);
+}
 
 
 
-//틀렸습니다 - 이유: 대각선으로 인접한 케이스만 고려
+
+//답이 틀리게 나 - 이유: 대각선으로 인접한 케이스만 고려
 
 
 //#include <iostream>
