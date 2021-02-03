@@ -15,7 +15,6 @@ c++ 알고리즘
 ### 브루트 포스
 - [2309번 일곱 난쟁이](https://github.com/ImYurim/Algorithm/blob/main/%EC%9D%BC%EA%B3%B1%20%EB%82%9C%EC%9F%81%EC%9D%B4.cpp)
 - [3085번 사탕 게임](https://github.com/ImYurim/Algorithm/blob/main/%EC%82%AC%ED%83%95%20%EA%B2%8C%EC%9E%84.cpp)
-제출 실패
 - [1476번 날짜 계산](https://github.com/ImYurim/Algorithm/blob/main/%EB%82%A0%EC%A7%9C%20%EA%B3%84%EC%82%B0.cpp)
 - [1107번 리모컨]() 풀어야함
 - [14500번 테트로미노](https://github.com/ImYurim/Algorithm/blob/main/%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8.cpp)
