@@ -1,5 +1,6 @@
 //백준 18290번
-//백준에서 
+//백준에서 실패  
+//https://qkrwlgus5832.tistory.com/48 
 #include <iostream>
 #include <algorithm>
 #include <cstring>
