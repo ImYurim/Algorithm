@@ -12,6 +12,8 @@ int dx[4]={-1,0,0,1};
 int dy[4]={0,-1,1,0};
 int ans;
 int temp;
+int nx,ny;
+bool pass=false;
 
 
 void dfs(int cnt, int x, int y){
@@ -23,7 +25,18 @@ void dfs(int cnt, int x, int y){
     for(int i=x; i<N; i++){
         for(int j=y; j<M; j++){
             if(visited[i][j])continue;
-            if(visited[i-1][j]||visited[i][j-1]||visited[i][j+1]||visited[i+1][j])continue;
+            pass=false;
+            for(int k=0; k<4; k++){
+                nx = i+dx[k];
+                ny = j+dy[k];
+                
+                if(nx<0||nx>=N||ny<0||ny>=M)continue;
+                
+                if(visited[nx][ny])pass=true;
+            }
+            
+            if(pass)continue;
+            
             visited[i][j]=true;
             temp+=map[i][j];
             if(j+1>=M)dfs(cnt+1,i+1,0);
@@ -54,8 +67,6 @@ int main(){
     }
     printf("%d",ans);
 }
-
-
 
 
 
