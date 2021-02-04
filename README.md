@@ -16,7 +16,7 @@ c++ 알고리즘
 - [2309번 일곱 난쟁이](https://github.com/ImYurim/Algorithm/blob/main/%EC%9D%BC%EA%B3%B1%20%EB%82%9C%EC%9F%81%EC%9D%B4.cpp)
 - [3085번 사탕 게임](https://github.com/ImYurim/Algorithm/blob/main/%EC%82%AC%ED%83%95%20%EA%B2%8C%EC%9E%84.cpp)
 - [1476번 날짜 계산](https://github.com/ImYurim/Algorithm/blob/main/%EB%82%A0%EC%A7%9C%20%EA%B3%84%EC%82%B0.cpp)
-- [1107번 리모컨]() 풀어야함
+- [1107번 리모컨](https://github.com/ImYurim/Algorithm/blob/main/%EB%A6%AC%EB%AA%A8%EC%BB%A8.cpp)
 - [14500번 테트로미노](https://github.com/ImYurim/Algorithm/blob/main/%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8.cpp)
 - [6064번 카잉 달력](https://github.com/ImYurim/Algorithm/blob/main/%EC%B9%B4%EC%9E%89%20%EB%8B%AC%EB%A0%A5.cpp) 시간초과
 - [1748번 수 이어 쓰기 1](https://github.com/ImYurim/Algorithm/blob/main/%EC%88%98%20%EC%9D%B4%EC%96%B4%20%EC%93%B0%EA%B8%B0%201.cpp) 제출 실패
