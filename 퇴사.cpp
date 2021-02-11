@@ -12,11 +12,13 @@ int temp;
 //이건 없어도됨
 vector<int> d;
 
+//순서가 있고 중복 비허용 dfs
 void dfs(int date){
     if(date>N){
         ans=max(temp,ans);
         return;
     }
+    //순서 있음
     for(int i=date; i<=N; i++){
         if(i+tp[i][0]-1>N) {
             dfs(i+tp[i][0]);
