@@ -1,3 +1,6 @@
+// link 변수 초기화, start 팀 아닌 애들 link에 넣는 부분 틀렸었음
+// 백준 14889
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -14,15 +17,15 @@ bool start_yes;
 vector<int> link;
 
 
-void dfs(int num, int cnt){
-    if(cnt==N/2){
+void dfs(int num, int cnt, vector<int> link){
+    if(cnt>=N/2){
         int start_skill=0;
         int link_skill=0;
         //start 팀 아닌 애들 link팀에 넣기
-        for(int i=0; i<start.size(); i++){
+        for(int i=1; i<=N; i++){
             start_yes=false;
-            for(int j=1; j<=N; j++){
-                if(start[i]==j){
+            for(int j=0; j<=start.size(); j++){
+                if(start[j]==i){
                     start_yes=true;
                     break;
                 }
@@ -33,7 +36,7 @@ void dfs(int num, int cnt){
         for(int i=0; i<start.size(); i++){
             for(int j=0; j<start.size();j++){
                 
-                start_skill+=skill[start[i]][start[j]];;
+                start_skill+=skill[start[i]][start[j]];
             }
         }
         
@@ -50,7 +53,8 @@ void dfs(int num, int cnt){
     }
     for(int i=num; i<=N; i++){
         start.push_back(i);
-        dfs(i+1,cnt+1);
+        vector<int> link;
+        dfs(i+1,cnt+1,link);
         start.pop_back();
     }
 }
@@ -63,8 +67,8 @@ int main(){
             scanf("%d",&skill[i][j]);
         }
     }
-    
-    dfs(1,0);
+    vector<int> link;
+    dfs(1,0,link);
     
     printf("%d",ans);
 
