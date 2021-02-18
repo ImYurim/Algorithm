@@ -14,7 +14,6 @@ int ans;
 vector<int> start;
 bool start_yes;
 
-vector<int> link;
 
 
 void dfs(int num, int cnt, vector<int> link){
